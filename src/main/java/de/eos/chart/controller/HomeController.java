@@ -2,11 +2,14 @@ package de.eos.chart.controller;
 
 import java.math.BigDecimal;
 import java.security.SecureRandom;
+import java.util.UUID;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -49,7 +52,17 @@ public class HomeController {
 
 		return "index";
 	}
-	
+
+	@PutMapping("/random")
+	public String getRandom() {
+		return UUID.randomUUID().toString().replace("-", "");
+	}
+
+	@PostMapping("/random")
+	public String GetRandomStrING() {
+		return UUID.randomUUID().toString().replace("-", "");
+	}
+
 	@GetMapping("/")
 	public String index(Model model) {
 		int random = new SecureRandom().nextInt(3); // 0 - 2
@@ -97,6 +110,85 @@ public class HomeController {
 				.addDataset(dataset);
 
 		return new BarChart(data).toJson();
+	}
+	
+	
+	@GetMapping("/long") 
+	public void veryLongMethod() throws Exception {
+		//TODO: remove debug prints ;)
+		int a = 0;
+		int b = -1;
+		if(b < a ) {
+			System.out.println("Heureka");
+			b=a;
+			a+= 10;
+			if(b < a ) {
+				throw new Exception();
+			}else {
+				System.out.println("NASE");
+				a += b;
+			}
+			switch (a) {
+			case 1:
+				System.out.println(1);
+				break;
+			case 2:
+				System.out.println(2);
+				break;
+			case 3:
+				System.out.println(3);
+				break;
+			case 4:
+				System.out.println(4);
+				break;
+			case 5:
+				System.out.println(5);
+				break;
+			case 6:
+				System.out.println(6);
+				break;
+			case 7:
+				System.out.println(6);
+				break;
+			case 8:
+				System.out.println(8);
+				break;
+			case 9:
+				System.out.println(9);
+				break;
+			case 10:
+				System.out.println(10);
+				break;
+			case 11:
+				System.out.println(11);
+				break;
+			case 12:
+				System.out.println(14);
+				break;
+			case 14:
+				System.out.println(15);
+				break;
+			case 15:
+				System.out.println(16);
+				break;
+			case 16:
+				System.out.println(17);
+				break;
+			case 17:
+				System.out.println(18);
+				break;
+			case 18:
+				System.out.println(19);
+				break;
+			case 20:
+				System.out.println(20);
+				break;
+
+			default:
+				System.out.println(a);
+			}
+			
+		}
 	}
 
 }
