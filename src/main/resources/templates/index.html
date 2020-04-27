@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link href='/webjars/bootstrap/css/bootstrap.min.css' rel='stylesheet'>
+
+<meta charset="UTF-8">
+<title>Home</title>
+</head>
+<body>
+
+
+	<div th:replace="fragments/header"></div>
+
+	<div class="chart-container"
+		style="position: relative; height: 40vh; width: 80vw">
+		<canvas id="canvasId"></canvas>
+	</div>
+
+
+
+	<script src="/webjars/chartjs/Chart.min.js"></script>
+
+	<script th:inline="javascript">
+		//this is needed to get the model data json in Javascript, 
+		//I know looks ugly (alternative we can make a request to a REST endpoint)
+		
+		/*<![CDATA[*/
+		    var json = /*[[${json}]]*/ 'default';
+		    console.log(json)
+		/*]]>*/
+		
+		//Create the chart with chartjs and the data provided by the Java lib
+		var ctx = document.getElementById('canvasId');
+		new Chart(ctx, JSON.parse(json));
+</script>
+
+	<style>
+.chart-container {
+	margin-left: auto;
+	margin-right: auto;
+}
+</style>
+
+</body>
