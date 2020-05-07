@@ -10,6 +10,7 @@ public class eostest1 {
 
     @Test
     void contextLoads() {
+        //TODO: do it
         assertFalse(var1 == 1);
     }
 
