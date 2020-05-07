@@ -61,6 +61,7 @@ public class homeController {
     public String index(Model model) {
         int random = new SecureRandom().nextInt(3); // 0 - 2
         return chart(model, random + "");
+        //TODO: some thinks
     }
 
 
