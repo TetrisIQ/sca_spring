@@ -1,4 +1,4 @@
-package de.eos.chart;
+package de.EOS.chart;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

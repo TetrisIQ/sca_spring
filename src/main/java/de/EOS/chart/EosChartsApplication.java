@@ -1,4 +1,4 @@
-package de.eos.chart;
+package de.EOS.chart;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

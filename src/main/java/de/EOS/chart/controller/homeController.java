@@ -1,4 +1,4 @@
-package de.eos.chart.controller;
+package de.EOS.chart.controller;
 
 import java.math.BigDecimal;
 import java.security.SecureRandom;
@@ -28,11 +28,13 @@ import be.ceau.chart.dataset.RadarDataset;
 import be.ceau.chart.options.DoughnutOptions;
 
 @Controller
-public class HomeController {
+public class homeController {
 
 	private final Color solconOrange = new Color(237, 147, 64);
 
 	private final Double PI = Math.PI;
+
+	public String unusedVar = "unusedVariable";
 
 	@GetMapping("/chart/{chartId}")
 	public String chart(Model model, @PathVariable String chartId) {
@@ -111,7 +113,8 @@ public class HomeController {
 
 		return new BarChart(data).toJson();
 	}
-	
+
+	public int unusedInt = -1;
 	
 	@GetMapping("/long") 
 	public void veryLongMethod() throws Exception {
