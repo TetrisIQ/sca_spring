@@ -186,9 +186,6 @@ public class homeController {
 			case 20:
 				System.out.println(20);
 				break;
-
-			default:
-				System.out.println(a);
 			}
 			
 		}
